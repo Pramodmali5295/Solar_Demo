@@ -37,16 +37,16 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-8"
-          : "bg-transparent py-14"
+          ? "bg-card/95 backdrop-blur-md shadow-lg border-b border-border/50 py-3 md:py-4"
+          : "bg-transparent py-4 md:py-6"
       }`}
     >
       <div className="w-full max-w-full flex items-center justify-between px-6 md:px-12 lg:px-16">
         <Link to="/" className="group flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
+          <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl overflow-hidden bg-white shadow-lg transition-transform group-hover:scale-110">
             <img src={logo} alt="Reyansh Solar Services" className="h-full w-full object-contain p-1" />
           </div>
-          <span className={`font-display flex-shrink-0 text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
+          <span className={`font-display flex-shrink-0 text-lg sm:text-xl lg:text-2xl font-bold tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>
             Reyansh Solar Services
           </span>
         </Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
             <li key={link.href}>
               <Link
                 to={link.href}
-                className={`text-lg font-bold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
+                className={`text-base font-bold uppercase tracking-wider transition-all hover:text-accent relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-accent after:transition-all hover:after:w-full ${
                   isActive(link.href) ? "text-accent after:w-full" : (scrolled ? "text-foreground" : "text-white drop-shadow-md brightness-110")
                 }`}
               >
@@ -68,7 +68,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="rounded-full bg-accent px-8 py-3.5 text-lg font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
+              className="rounded-full bg-accent px-6 py-2.5 text-base font-bold text-accent-foreground shadow-lg transition-all hover:scale-105 hover:shadow-accent/40 active:scale-95"
             >
               Contact Us
             </Link>
@@ -104,7 +104,7 @@ const Navbar = () => {
                   <Link
                     to={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`block rounded-xl px-5 py-4 text-lg font-bold transition-all hover:bg-primary/10 active:scale-[0.98] ${
+                    className={`block rounded-xl px-4 py-3 text-base font-bold transition-all hover:bg-primary/10 active:scale-[0.98] ${
                       isActive(link.href) ? "bg-primary/10 text-primary" : "text-foreground"
                     }`}
                   >
@@ -116,7 +116,7 @@ const Navbar = () => {
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-full bg-accent px-5 py-4 text-center text-lg font-bold text-accent-foreground shadow-lg active:scale-95"
+                  className="block rounded-full bg-accent px-5 py-3 text-center text-base font-bold text-accent-foreground shadow-lg active:scale-95"
                 >
                   Contact Us
                 </Link>
